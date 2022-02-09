@@ -1,6 +1,6 @@
 package services;
 
-import ArrayUser.UserMass;
+import ArrayUser.ArrayUser;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -19,7 +19,7 @@ public class ArrayUserApi {
                 .contentType(ContentType.JSON);
     }
 
-    public Response createWithArrayUser(UserMass user){
+    public Response  createWithArrayUser(ArrayUser user){
         return given(spec)
                 .body(user)
                 .log().all()

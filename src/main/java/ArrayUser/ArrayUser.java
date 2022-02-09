@@ -12,7 +12,6 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 @NoArgsConstructor
 @JsonSerialize
 public class ArrayUser {
-
     private String email;
     private String firstName;
     private Long id;

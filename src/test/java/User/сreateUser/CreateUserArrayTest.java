@@ -1,32 +1,33 @@
 package User.сreateUser;
 
-import ArrayUser.ArrayUser;
-import ArrayUser.UserMass;
+import ArrayUser.*;
+import io.restassured.response.Response;
 import jdk.jfr.Name;
-import org.apache.http.HttpStatus;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import services.ArrayUserApi;
-
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.lessThan;
 
 public class CreateUserArrayTest {
 
     @Test
     @Name("")
     public void checkCreateUser(){
+        ArrayUser arrayUser = ArrayUser.builder().email("email").build();
 
-        ArrayUser arrayUser = ArrayUser.builder().userStatus(200L).build();
+        ArrayUserApi arrayUserApi = new ArrayUserApi();
 
-        UserMass userMass = UserMass.builder().ArrayUser(arrayUser).build();
+        Response response = arrayUserApi.createWithArrayUser(arrayUser);
 
-        ArrayUserApi userMassApi = new ArrayUserApi();
+        ArrayUserOut arrayUserOut = response.then().log().all().extract().as(ArrayUserOut.class);
 
-        userMassApi.createWithArrayUser(userMass)
-                .then()
-                .log().all()
-                .statusCode(HttpStatus.SC_OK)
-                .time(lessThan(2500L))
-                .body("code",equalTo(500));
+        String userType = "unknown";
+        System.out.println(arrayUserOut);
+        Assertions.assertEquals(userType, arrayUserOut.getType());
+    }
+
+    @Test
+    @Name("")
+    public void checkCreateUser1(){
+
     }
 }
