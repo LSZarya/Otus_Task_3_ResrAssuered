@@ -1,4 +1,4 @@
-package dto;
+package ru.otus.qa.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,8 +11,7 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonSerialize
-public class User {
-
+public class UserModel {
     private String email;
     private String firstName;
     private Long id;

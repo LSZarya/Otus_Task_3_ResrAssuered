@@ -1,5 +1,5 @@
 
-package dto;
+package ru.otus.qa.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

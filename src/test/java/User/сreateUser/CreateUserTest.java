@@ -1,14 +1,14 @@
 package User.сreateUser;
 
-import dto.User;
-import dto.UserOut;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import jdk.jfr.Name;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import services.UserApi;
+import ru.otus.qa.dto.User;
+import ru.otus.qa.dto.UserOut;
+import ru.otus.qa.services.UserApi;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.lessThan;
