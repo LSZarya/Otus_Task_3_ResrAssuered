@@ -1,25 +1,25 @@
-package services;
+package ru.otus.qa.services;
 
-import ArrayUser.ArrayUser;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import ru.otus.qa.dto.User;
 
 import static io.restassured.RestAssured.given;
 
-public class ArrayUserApi {
+public class UserApi {
 
     private static final String BASE_URI = "https://petstore.swagger.io/v2/";
     private final RequestSpecification spec;
-    private static final String USER_POST = "/user/createWithArray";
+    private static final String USER_POST = "/user";
 
-    public ArrayUserApi(){
+    public UserApi(){
         spec = given()
                 .baseUri(BASE_URI)
                 .contentType(ContentType.JSON);
     }
 
-    public Response  createWithArrayUser(ArrayUser user){
+    public Response createUser(User user){
         return given(spec)
                 .body(user)
                 .log().all()

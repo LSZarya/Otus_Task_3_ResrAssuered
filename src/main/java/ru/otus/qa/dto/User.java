@@ -1,4 +1,5 @@
-package ArrayUser;
+package ru.otus.qa.dto;
+// TODO: duplicate with UserModel
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +12,8 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonSerialize
-public class ArrayUser {
+public class User {
+
     private String email;
     private String firstName;
     private Long id;
@@ -20,5 +22,4 @@ public class ArrayUser {
     private String phone;
     private Long userStatus;
     private String username;
-
 }
