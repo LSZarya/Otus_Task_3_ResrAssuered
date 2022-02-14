@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="C:/Users/LSZARYA/autotest_training/Otus_Task/Otus_ResrAssuered">
+        <classes>
+            <class name="User.CreateUser.CreateUserArrayTest">
+                <methods>
+                    <include name="checkCreateUser"/>
+                    <include name="checkCreateUser1"/>
+                </methods>
+            </class>
+            <class name="User.CreateUser.CreateUserTest">
+                <methods>
+                    <include name="checkCreateUser"/>
+                    <include name="checkCreateUserAllParams"/>
+                </methods>
+            </class>
+            <class name="User.CreateUser.UserLoginTest">
+                <methods>
+                    <include name="UserLoginTestOk"/>
+                    <include name="UserLogoutTestDataProvider"/>
+                </methods>
+            </class>
+            <class name="User.CreateUser.UserLogoutTest">
+                <methods>
+                    <include name="UserLogoutTestOk"/>
+                    <include name="UserLogoutTestResponse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
